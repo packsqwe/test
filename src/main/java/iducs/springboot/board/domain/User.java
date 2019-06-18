@@ -7,6 +7,15 @@ public class User {
 	private String name;
 	private String company;
 	
+	public User()  {}
+	public User(String userId, String userPw, String name, String company) {
+		super();
+		this.userId = userId;
+		this.userPw = userPw;
+		this.name = name;
+		this.company = company;
+	}
+	
 	public long getId() {
 		return id;
 	}

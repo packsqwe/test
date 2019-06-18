@@ -31,12 +31,11 @@
 					<div class="col-lg-2 col-md-2 mt-sm-30">
 					</div>
 					<div class="col-lg-8 col-md-8">
-						<h3 class="mb-30">회원가입</h3>
+						<h3 class="mb-30">회원정보</h3>
 						<!-- 
 						<form th:action="@{'/users'}" th:method="post">
 						 -->
-						 <form th:action="@{'/users/{id}'(id=${id})}" 
-						 th:method="put" th:object="${user}">
+						 <form th:action="@{'/users/{id}'(id=${user.id})}" th:method="put" th:object="${user}">
 							<div class="mt-10">
 								<input type="text" th:field="*{userId}" name="userId" placeholder="사용자 아이디" onfocus="this.placeholder = ''" onblur="this.placeholder = '사용자 아이디'" required="" class="single-input" ReadOnly>
 							</div>
@@ -51,7 +50,7 @@
 							</div>
 							<div class="form-group mt-3">
 				              <button type="submit" class="button button-contactForm btn_4">
-				              	회원가입</button>
+				              	회원정보수정</button>
 				            </div>
 						</form>
 					</div>
@@ -62,7 +61,7 @@
 		</div>
 	</div>
 	
-	<th:block th:include="fragments/nav"></th:block> 
+	<th:block th:include="fragments/footer"></th:block> 
 </body>
 
 </html>

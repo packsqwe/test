@@ -17,29 +17,36 @@
                                 <li class="nav-item active">
                                     <a class="nav-link" href="/">Home</a>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Pages
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/contact.html">contact - register</a>
+                                        <a class="dropdown-item" href="/blog.html">blog - list</a>
+                                        <a class="dropdown-item" href="/single-blog.html">Single blog - info</a>
+                                        <a class="dropdown-item" href="/elements.html">Elements</a>
+                                    </div>
+                                </li>
                                 <li th:unless="${session.user}" class="nav-item">
                                     <a class="nav-link" href="/users/login-form">Log-In</a>
                                 </li>
                                 <li th:unless="${session.user}" class="nav-item">
-                                    <a class="nav-link" href="/users/register-form">Register</a>
+                                    <a class="nav-link" href="/users/form">Register</a>
                                 </li>
                                 <li th:if="${session.user}" class="nav-item">
-                                    <a class="nav-link" th:href="@{'/users/{id}'(id=${session.user.id})}">Info</a>
+                                    <a class="nav-link" href="/questions">Questions</a>
+                                </li>
+                                <li th:if="${session.user}" class="nav-item">
+                               		<a class="nav-link" th:href="@{'/users/{id}'(id=${session.user.id})}" >
+                                   <span th:text="${session.user.userId}"></span>님 Info</a>
                                 </li>
                                 <li th:if="${session.user}" class="nav-item">
                                     <a class="nav-link" href="/logout">Log-Out</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        pages
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                        <a class="dropdown-item" href="elements.html">Elements</a>
-                                    </div>
-                                </li>
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="contact.html"></a>
                                 </li>
                             </ul>
                         </div>
